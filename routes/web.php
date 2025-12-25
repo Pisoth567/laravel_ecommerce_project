@@ -22,6 +22,10 @@ Route::middleware('admin')->group(function () {
     Route::post('/add_category', [AdminController::class, 'postAddCategory'])->name('admin.post_add_category');
     Route::get('/view_category', [AdminController::class, 'viewCategory'])->name('admin.viewcategory');
     Route::get('/delete_category/{id}', [AdminController::class, 'deleteCategory'])->name('admin.deletecategory');
+    Route::get('/update_category/{id}', [AdminController::class, 'updateAddCategory'])->name('admin.updatecategory');
+    Route::post('/post_add_category/{id}', [AdminController::class, 'postUpdateCategory'])->name('admin.postupdatecategory');
+    Route::get('/add_product', [AdminController::class, 'addProduct'])->name('admin.addproduct');
+    Route::post('/add_product', [AdminController::class, 'postAddProduct'])->name('admin.postaddproduct');
 });
  
 require __DIR__.'/auth.php';

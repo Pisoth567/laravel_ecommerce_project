@@ -49,7 +49,7 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="front_end/why.html">
-                Why Us
+                <!-- Why Us -->
               </a>
             </li>
             <li class="nav-item">
@@ -134,11 +134,7 @@
       </div>
     </section>
 
-    <!-- end slider section -->
   </div>
-  <!-- end hero area -->
-
-  <!-- shop section -->
 
   <section class="shop_section layout_padding">
     <div class="container">
@@ -227,7 +223,7 @@
           <div class="box">
             <a href="">
               <div class="img-box">
-                <img src="front_end/images/p4.png" alt="">
+                <img src="front_end/images/janna.jpg" alt="">
               </div>
               <div class="detail-box">
                 <h6>

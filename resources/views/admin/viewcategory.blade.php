@@ -24,6 +24,7 @@
                     <td style="padding: 12px;">{{$category -> id}}</td>
                     <td style="padding: 12px;">{{$category -> category}}</td>
                     <td style="padding: 12px;">
+                        <a href="{{ route('admin.updatecategory', $category -> id) }}" class="text-info">update</a>
                         <a href="{{ route('admin.deletecategory', $category -> id) }} " onclick=" return confirm('Are You Sure!')">Delete</a>
                     </td>
                 </tr>

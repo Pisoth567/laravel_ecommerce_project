@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
-
 class AdminController extends Controller
 {
     public function test_admin(){
@@ -35,5 +34,21 @@ public function deleteCategory($id){
     return redirect()->back()->with('deletecategory_message','You have Deleted Successfully!');
 }
 
+public function updateAddCategory($id){
+    $category = Category::findOrFail($id);
+    return view('admin.updatecategory', compact('category'));
+}
 
+
+public function postUpdateCategory(Request $request, $id){
+    $category = Category::findOrFail($id);
+    $category-> category  = $request -> category;
+    $category -> save();    
+    return redirect()->back()-> with('category_updated_message','Category Updated Successfully');
+}
+
+
+public function addProduct(){
+    return view('admin.addproduct');
+}
 }
