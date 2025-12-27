@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -14,5 +15,10 @@ class UserController extends Controller
             else if( Auth::user()->user_type == "admin"){
                 return view('admin.dashboard');
             }
+        }
+
+        public function home(){
+            $products = Product::all();
+            return view('index',compact('products'));
         }
 }
