@@ -13,6 +13,9 @@ Route::get('/dashboard', [UserController::class , "index"])->middleware(['auth',
 Route::get('/addtocard/{id}', [UserController::class , "addToCard"])->middleware(['auth', 'verified'])->name('add_to_card');
 Route::get('/removecartproduct/{id}', [UserController::class , "removeCartProduct"])->middleware(['auth', 'verified'])->name('removecartproduct');
 
+// comfirm Order
+Route::post('/comfirm_order', [UserController::class , "comfirmOrder"])->middleware(['auth', 'verified'])->name('comfirm_order');
+
 Route::get('/cartproducts', [UserController::class , "cartProducts"])->middleware(['auth', 'verified'])->name('cartproducts');
 
 Route::middleware('auth')->group(function () {
@@ -33,6 +36,11 @@ Route::middleware('admin')->group(function () {
     Route::get('/view_product', [AdminController::class, 'viewProduct'])->name('admin.view_product');
     Route::get('/delete_product/{id}', [AdminController::class, 'deleteProduct'])->name('admin.deleteproduct');
     Route::get('/update_product/{id}', [AdminController::class, 'updateProduct'])->name('admin.updateproduct');
+    Route::get('/vieworders', [AdminController::class, 'viewOrders'])->name('admin.vieworders');
+    
+    Route::post('/change_status/{id}', [AdminController::class, 'changeStatus'])->name('admin.change_status');
+    
+    Route::get('/downloadpdf/{id}', [AdminController::class, 'downloadPDF'])->name('admin.downloadpdf');
 });
  
 require __DIR__.'/auth.php';

@@ -10,16 +10,22 @@
          * Run the migrations.
          */
         public function up(): void
-        {
-            Schema::create('product_cards', function (Blueprint $table) {
-                $table->id();
-                $table->unsignedInteger('user_id');
-                $table->unsignedInteger('product_id');
-                $table->foreign('user_id')->references('id')->on( "users")->cascadeOnDelete();
-                $table->foreign('product_id')->references('id')->on("products")->cascadeOnDelete();
-                $table->timestamps();
-            });
-        }
+{
+    Schema::create('product_cards', function (Blueprint $table) {
+        $table->id();
+
+        $table->foreignId('user_id')
+              ->constrained()
+              ->cascadeOnDelete();
+
+        $table->foreignId('product_id')
+              ->constrained()
+              ->cascadeOnDelete();
+
+        $table->timestamps();
+    });
+}
+
 
         /**
          * Reverse the migrations.

@@ -14,7 +14,7 @@
         <thead>      
             <tr style="background-color: #f2f2f2;">
                 <th style="padding: 12px; text-align: center; border-bottom: 1px solid #ddd;">Product Name</th>
-                <th style="padding: 12px; text-align: center; border-bottom: 1px solid #ddd;">Description</th>
+                <th style="padding: 12px; text-align: center; border-bottom: 1px solid #ddd; width:250px;">Description</th>
                 <th style="padding: 12px; text-align: center; border-bottom: 1px solid #ddd;">Quantity</th>
                 <th style="padding: 12px; text-align: center; border-bottom: 1px solid #ddd;">Price</th>
                 <th style="padding: 12px; text-align: center; border-bottom: 1px solid #ddd;">Image</th>
@@ -26,12 +26,12 @@
             @foreach ($products as $product)
                 <tr style=" border-bottom: 1px solid #ddd;">
                     <td style="padding: 12px; text-align: center;">{{$product -> product_name}}</td>
-                    <td style="padding: 12px; text-align: center;">{{$product -> product_description}}</td>
+                    <td style="padding: 12px; text-align: center; width:250px;">{{Str::limit($product -> product_description,100) }}</td>
                     <td style="padding: 12px; text-align: center;">{{$product -> product_qty}}</td>
-                    <td style="padding: 12px; text-align: center;">{{$product -> product_price}}</td>
+                    <td style="padding: 12px; text-align: center; color:white; font-weight: bold;">$ {{$product -> product_price}}</td>
                     <td style="padding: 12px; text-align: center;">
                         <img style="width: 100px;" src="{{ asset('products/'.$product -> product_image) }}" alt="">
-                    </td>
+                    </td> 
                     <td style="padding: 12px; text-align: center;">{{$product -> category_id}}</td>
                     <td style="padding: 12px; text-align: center;">
                         <a href="{{ route('admin.updateproduct', $product-> id) }}" class="btn btn-info text-white">update</a>

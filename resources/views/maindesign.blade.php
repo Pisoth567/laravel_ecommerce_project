@@ -33,13 +33,13 @@
     <nav class="container navigetion">
       <ul class="container-list">
         <li style="display: inline-block;">
-          <a href="">
+          <a href="{{ route('index') }}">
             
             <img style="width: 80px;" src="{{ asset('front_end/images/logo-ms.png') }}" alt="">
           </a>
         </li>
         <li class="list-menu">
-          <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="{{ route('index') }}">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="list-menu">
           <a class="nav-link" href="front_end/shop.html">

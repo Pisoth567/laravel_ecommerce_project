@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use App\Models\Product;
 use App\Models\ProductCard;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use PhpParser\Node\Expr\FuncCall;
 
 class UserController extends Controller
 {
@@ -79,6 +81,28 @@ class UserController extends Controller
             $cartproduct = ProductCard::findOrFail($id);
             $cartproduct->delete();
             return redirect()->back();
+        }
+
+        public function comfirmOrder(Request $request){
+            $car_product_id = ProductCard::where('user_id',Auth::id())->get();  
+            $address = $request-> receiver_address;
+            $phone = $request-> receiver_phone;
+            foreach( $car_product_id as $cart_product){
+                $order = new Order();
+                $order -> receiver_address = $address;
+                $order -> receiver_phone = $phone;
+                $order -> user_id = Auth::id();
+                $order -> product_id = $cart_product->product_id;
+                $order -> save();
+            }
+
+            $carts = ProductCard::where('user_id',Auth::id())->get();
+            foreach($carts as $cart){
+                $cart_id = ProductCard::find($cart-> id);
+                $cart_id -> delete();
+            }
+
+            return redirect()->back()->with('comfirm_order', "Order Comfirmed");
         }
 }
 

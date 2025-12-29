@@ -6,6 +6,49 @@ body {
   background-color: #ffffff;
 }
 
+/* header{
+  display: flex;
+  align-items: center;
+} */
+
+.header-style{
+  width: 100%;
+  background-color: #c4c4c4;
+  box-shadow: 3px 0 8px rgb(237, 103, 103);
+}
+
+.navigetion{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.navigetion > .container-list{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navigetion > .container-list > .list-menu{
+  display: inline-block;
+}
+
+.navigetion > .container-list > .list-menu > a{
+  display: inline-block;
+  padding: 10px;
+
+  color: #000000;
+  text-decoration: none;
+  transition: all .2s;
+}
+
+.navigetion > .container-list > .list-menu > a:hover{
+  background-color: #6363633d;
+  box-shadow: inset 1px 0px 2px brown;
+  border-radius: 5px;
+}
+
 .layout_padding {
   padding-top: 90px;
   padding-bottom: 90px;
@@ -233,10 +276,11 @@ a:focus {
 /*end header section*/
 .slider_section .slider_container {
   color: #fefefe;
-  background-color: #000000;
-  background-color: black;
+  background-color: #c4c4c4;
+  /* background-color: black; */
   padding: 25px;
-  border-radius: 0 0 15px 15px;
+  border-bottom: 3px solid brown;
+  /* border-radius: 0 0 15px 15px; */
 }
 
 .slider_section .row {
@@ -245,19 +289,7 @@ a:focus {
           align-items: center;
 }
 
-.slider_section .img-box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 45px;
-}
 
-.slider_section .img-box img {
-  width: 275px;
-}
 
 .slider_section .detail-box {
   padding-left: 45px;
@@ -267,6 +299,7 @@ a:focus {
 .slider_section .detail-box h1 {
   font-weight: bold;
   font-size: 3.5rem;
+  color: #000000;
   margin-bottom: 10px;
 }
 

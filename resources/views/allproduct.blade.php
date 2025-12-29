@@ -1,6 +1,7 @@
 @extends('maindesign')
 
 @section('all_products')
+<h2 style="text-align: center;">All Products</h2>
     <div class="container">
       <div class="row">
         @foreach ($products as $product)
@@ -9,7 +10,7 @@
               <a href="{{ route('product_detail', $product->id) }}">
                 <div class="img-box">
                   <img src="{{ asset('products/'.$product->product_image) }}" alt="">
-                </div>
+                </div> 
                 <div class="detail-box">
                   <h6>
                     {{$product->product_name}}
