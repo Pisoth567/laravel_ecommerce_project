@@ -41,13 +41,13 @@
         </div>
         <div class="container-fluid d-flex align-items-center justify-content-between">
           <div class="navbar-header">
-            <!-- Navbar Header--><a href="index.html" class="navbar-brand">
-              <div class="brand-text brand-big visible text-uppercase"><strong class="text-primary">Dark</strong><strong>Admin</strong></div>
-              <div class="brand-text brand-sm"><strong class="text-primary">D</strong><strong>A</strong></div></a>
+            <!-- Navbar Header--><a href="{{ route('index') }}" class="navbar-brand">
+              <div class="brand-text brand-big visible text-uppercase"><strong class="text-primary">Phone</strong><strong>Store</strong></div>
+              <div class="brand-text brand-sm"><strong class="text-primary">P</strong><strong>S</strong></div></a>
             <!-- Sidebar Toggle Btn-->
             <button class="sidebar-toggle"><i class="fa fa-long-arrow-left"></i></button>
           </div>
-          <div class="right-menu list-inline no-margin-bottom">    
+          <div class="right-menu list-inline no-  margin-bottom">    
             <div class="list-inline-item"><a href="#" class="search-open nav-link"><i class="icon-magnifying-glass-browser"></i></a></div>
             
             <!-- Log out               -->
@@ -70,10 +70,11 @@
       <!-- Sidebar Navigation-->
       <nav id="sidebar">
         <!-- Sidebar Header-->
-        <div class="sidebar-header d-flex align-items-center">
-          <div class="avatar"><img src="admin/img/avatar-6.jpg" alt="..." class="img-fluid rounded-circle"></div>
+        <div class="sidebar-header d-flex align-items-center relative ">
+          <div class="avatar"><img src="admin/img/admin.png" style="display: block; width: 150%; transform: translate(-10%, -5%);" alt="..." class="absolute"></div>
           <div class="title">
             <h1 class="h5">Admin</h1>
+           
             <p>E-Commerce</p>
           </div>
         </div>
