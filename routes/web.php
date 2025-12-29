@@ -6,8 +6,14 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [UserController::class, 'home'])->name('index');
+Route::get('/product_detail/{id}', [UserController::class, 'productDetail'])->name('product_detail');
+Route::get('/viewallproduct', [UserController::class, 'allProducts'])->name('viewallproduct');
 
 Route::get('/dashboard', [UserController::class , "index"])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/addtocard/{id}', [UserController::class , "addToCard"])->middleware(['auth', 'verified'])->name('add_to_card');
+Route::get('/removecartproduct/{id}', [UserController::class , "removeCartProduct"])->middleware(['auth', 'verified'])->name('removecartproduct');
+
+Route::get('/cartproducts', [UserController::class , "cartProducts"])->middleware(['auth', 'verified'])->name('cartproducts');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
